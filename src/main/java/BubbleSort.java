@@ -32,20 +32,5 @@ public class BubbleSort {
         a[i] = a[j];
         a[j] = temp;
     }
-
-    public static void main(String args[]){
-        BubbleSort sorter = new BubbleSort();
-        Integer[] array = {10, 5, 6, 8, 30, 5};
-        System.out.println("Before Sorting:");
-        for(int num : array){
-            System.out.print(num + " ");
-        }
-        System.out.println();
-        sorter.sort(array);
-        System.out.println("After Sorting:");
-        for(int num : array){
-            System.out.print(num + " ");
-        }
-        }
     }
 
