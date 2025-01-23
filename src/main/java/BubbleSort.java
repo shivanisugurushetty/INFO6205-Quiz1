@@ -9,7 +9,15 @@ public class BubbleSort {
      *       This optimization ensures the algorithm stops early if the array is already sorted.
      */
     public void sort (Comparable[] a){
-//        write your code here.
+        int n = a.length;
+        for(int i=0; i<n; i++){
+            for(int j=0; j<n-1;j++){
+                if(a[j].compareTo(a[j+1])>0){
+                    swap(a,j,j+1);
+                }
+            }
+        }
+
 
     }
     /**
@@ -19,9 +27,25 @@ public class BubbleSort {
      * @param j The index of the first element to swap.
      * @param i The index of the second element to swap.
      */
-    private void swap(Object[] a, int j, int i) {
-        Object temp = a[j];
-        a[j] = a[i];
-        a[i] = temp;
+    private void swap(Object[] a, int i, int j) {
+        Object temp = a[i];
+        a[i] = a[j];
+        a[j] = temp;
     }
-}
+
+    public static void main(String args[]){
+        BubbleSort sorter = new BubbleSort();
+        Integer[] array = {10, 5, 6, 8, 30, 5};
+        System.out.println("Before Sorting:");
+        for(int num : array){
+            System.out.print(num + " ");
+        }
+        System.out.println();
+        sorter.sort(array);
+        System.out.println("After Sorting:");
+        for(int num : array){
+            System.out.print(num + " ");
+        }
+        }
+    }
+
